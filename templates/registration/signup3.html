@@ -1,0 +1,69 @@
+{% extends 'job_post/base-reg.html' %}
+{% load static %}
+{% block content %}
+    <div class="flex-lg-row">
+        <div class="complete-container">
+            <div id="complete-card">
+                <img src="{% static 'images/logo-100.png' %}">
+                <h1 class="text-center login-title">Complete your Profile</h1>
+                <hr>
+                <form method='POST'>
+                    {% csrf_token %}
+                    <div class="login-center complete">
+                        <div class="row">
+                            <div class="col">
+                                <label class="sr-only">{{ form.first_name.label_tag }}</label>
+                                <span>{{ form.first_name }}</span>
+                            </div>
+                            <div class="col">
+                                <label class="sr-only">{{ form.last_name.label_tag }}</label>
+                                <span>{{ form.last_name }}</span>
+                            </div>
+                        </div>
+                        <div class="row" style="margin: 15px 0px 0 0px">
+                            <span>Date of Birth: {{ form.date_of_birth }}</span>
+                        </div>
+                        <div id="csz" class="row">
+                            <div class="col">
+                                <label class="sr-only">{{ form.city.label_tag }}</label>
+                                {{ form.city }}
+                            </div>
+                            <div class="col">
+                                <label class="sr-only">{{ form.state.label_tag }}</label>
+                                {{ form.state }}
+                            </div>
+                            <div class="col">
+                                <label class="sr-only">{{ form.zipcode.label_tag }}</label>
+                                {{ form.zipcode }}
+                            </div>
+                        </div>
+                        <div class="row" style="width: 80%">
+                            <div class="col"
+                                 style="margin: 22px 0px 0px 0px; padding-right: 5px; padding-left: 12px; text-align: left">
+                                <label class="sr-only">{{ form.phone.label_tag }}</label>
+                                {{ form.phone }}
+                            </div>
+                            <div class="col" style="font-size: small; text-align: left; padding-left: 0">
+                                <div class="row">
+                                    <div class="col-1" style="margin: 30px 0px 0px 0px; padding-left: 0px">
+                                        <label class="sr-only">{{ form.email_notification_active.label_tag }}</label>
+                                        {{ form.email_notification_active }}
+                                    </div>
+                                    <div class="col"
+                                         style="padding-right: 0; padding-left: 10px; text-align: left; line-height: 110%; margin: 17px 0px 0px -5px ">
+                                        I would like to receive email notifications and
+                                        platform news.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input class="btn btn-dark" style="margin-top: 15px" type="submit" name="submit"
+                               value="Complete"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+{% endblock content %}

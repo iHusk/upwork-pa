@@ -1,0 +1,53 @@
+{% extends 'job_post/base-reg.html' %}
+{% load static %}
+{% block content %}
+    <div class="flex-lg-row">
+        <div class="select-container">
+            <div id="login-card">
+                <img src="{% static 'images/logo-100.png' %}">
+                <h1 class="text-center login-title">Account Type</h1>
+                <hr>
+                <div class="row">
+                    <div class="col-md">
+                        <h4>Recruiter</h4>
+                        <img src="{% static 'images/group.png' %}" height="120px" width="120px"
+                             style="margin-top: -7px; margin-bottom: 7px;" alt="">
+                        <hr style="margin-top: -5px">
+                        <div id="bullets">
+                            <ul>
+                                <li>adipisicing elit. Nobis, ut.</li>
+                                <li>Lorem ipsum est obcaecati quae quos vel.</li>
+                                <li>Lorem amet, consectetur.</li>
+                                <li>Lorem ipsum sapiente. Amet deleniti distinctio doloribus nisi repud?</li>
+                            </ul>
+                        </div>
+                        <hr style="margin-top: -5px">
+                        <form method='POST'>
+                            {% csrf_token %}
+                            <input class="btn btn-dark" style="width: 50%" type="submit" name="submit" value="Recruiter"/>
+                        </form>
+                    </div>
+                    <div class="col-1" id="vr"></div>
+                    <div class="col-md">
+                        <h4>Seeker</h4>
+                        <img src="{% static 'images/single.png' %}" height="120px" width="120px" alt="">
+                        <hr style="margin-top: -5px">
+                        <div id="bullets">
+                            <ul>
+                                <li>Lorem ipsum est obcaecati quae quos vel.</li>
+                                <li>Lorem amet, consectetur.</li>
+                                <li>Lorem ipsum sapiente. Amet deleniti distinctio doloribus nisi repud?</li>
+                                <li>adipisicing elit. Nobis, ut.</li>
+                            </ul>
+                        </div>
+                        <hr style="margin-top: -5px">
+                        <form method='POST'>
+                            {% csrf_token %}
+                            <input class="btn btn-dark" style="width: 50%" type="submit" name="submit" value="Seeker"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}

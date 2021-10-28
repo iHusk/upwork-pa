@@ -1,0 +1,55 @@
+{% extends 'job_post/base.html' %}
+{% load static %}
+{% block content %}
+    <div class="container" style="padding-top:120px">
+        <div style="border: 4px black solid">
+            <div class="col-md">
+                <div class="row" style="background-color: lightgray; border-bottom: 4px black solid;">
+                    <div class="col" style="max-height: 250px">
+                        <div class="align-top">
+                            <h3></h3>
+                        </div>
+                        <table style="height: 250px">
+                            <tbody>
+                            <tr>
+                                <td class="align-top">
+                                    <h3>{{ profile.first_name }} {{ profile.last_name }}<span
+                                            style="font-style: normal; font-size: small;">   {{ profile.date_of_birth }}</span>
+                                    </h3>
+                                    <p> {{ profile.city }} {{ profile.state }}, {{ profile.zipcode }}</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="align-bottom">
+                                    <p>
+                                        {{ profile.phone }}
+                                    </p>
+                                    <p>
+                                        {{ profile.email }}
+                                    </p>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                        <div class="col" style="text-align: right">
+                            <form method="POST" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                {{ form.user_image }}
+                                <input type="submit" name="submit" value="Upload Profile Picture">
+                            </form>
+                            <img src="{{ profile.user_image }}" alt="" style="margin-right: -15px">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="text-center">
+                        <input type="file">
+                        <input type="submit" value="Upload Resume" name="upload_resume">
+                    </div>
+                </div>
+            </div>
+            {{ profile.phone }}
+        </div>
+    </div>
+{% endblock %}

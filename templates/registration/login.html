@@ -1,0 +1,53 @@
+{% extends "job_post/base.html" %}
+{% load static %}
+{% block content %}
+    {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %}
+    <div class="flex-lg-row">
+        <div class="login-container">
+            <div id="login-card">
+                {% if user.is_authenticated %}
+                    <h3>{{ user.first_name }} {{ user.last_name }}</h3>
+                    <h8>{{ user.profile.email }}</h8>
+                    <p>You're Already Logged In!</p>
+                    <a href="{% url 'upwork:home' %}">Take me home!</a>
+                {% else %}
+
+                    <img src="{% static 'images/logo-100.png' %}" alt="Logo">
+                    <h1 class="text-center login-title">Sign In</h1>
+                    <hr>
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <div class="login-center">
+                            <label for="id_username" class="sr-only">Email Address: </label>
+                            <input type="text" name="username" id="id_username" class="form-control"
+                                   placeholder="Email Address..." size="15" required
+                                   autofocus>
+                            <label for="id_password" class="sr-only">Password: </label>
+                            <input type="password" name="password" id="id_password" class="form-control"
+                                   placeholder="Password" required>
+                            <button class="btn btn-dark" type="submit">Sign In</button>
+                        </div>
+                        <label class="checkbox pull-left">
+                            <input type="checkbox" value="remember-me"> Remember Me
+                        </label>
+                    </form>
+                    <div>
+                    <span>
+                        <a href="{% url "register" %}" class="text-center new-account">Create an Account</a>
+                    </span>
+                    </div>
+                    <div>
+                    <span>
+                        <a href="{% url "password_reset" %}">Forgotten your password?</a>
+                    </span>
+                    </div>
+
+                {% endif %}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

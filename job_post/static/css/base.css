@@ -1,0 +1,166 @@
+
+#logo {
+    font-family: Arial, sans-serif;
+    font-size: 88px;
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 34px;
+}
+
+.card2 {
+    text-align: center;
+    border: 2px black solid;
+    border-radius: 25px;
+    box-shadow: 0 0 40px 5px gray;
+    width: 200px;
+    border-collapse: separate;
+    overflow: hidden;
+}
+
+#logo-login {
+    text-align: center;
+    margin-top: 120px;
+    margin-bottom: 10px;
+}
+
+#search-home {
+    margin-bottom: 34px;
+}
+
+#search-home span {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.search-home {
+    border: none;
+    color: gray;
+    text-align: right;
+    padding-right: 5px;
+}
+
+
+#login-card {
+    text-align: center;
+    margin-top: 120px;
+    border: 2px black solid;
+    padding: 20px 40px 20px 40px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 40px 5px gray;
+}
+
+#login-card form {
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.login-container {
+    margin: auto;
+    max-width: 350px;
+}
+
+.complete-container {
+    margin: auto;
+    max-width: 450px;
+}
+
+#complete-card {
+    text-align: center;
+    margin-top: 120px;
+    border: 2px black solid;
+    padding: 20px 20px 30px 20px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 40px 5px gray;
+}
+
+#complete-card form {
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.select-container {
+    margin: auto;
+    max-width: 850px;
+}
+
+.search-home:focus {
+    outline: none;
+}
+
+.login-center {
+    display: grid;
+    place-items: center;
+}
+
+#vr {
+    border-left: 1px solid lightgray;
+    height: 400px;
+    margin-left: 15px;
+    margin-right: -15px;
+    opacity: 75%;
+}
+
+#bullets {
+    text-align: justify;
+}
+
+#bullets ul {
+    padding-left: 10px;
+}
+
+#bullets li {
+    margin-top: 10px;
+}
+
+#login-card input {
+    max-width: 200px;
+    margin: 5px;
+}
+
+#login-card h1 {
+    margin-bottom: 25px;
+}
+
+form button {
+    max-width: 200px;
+    margin: 5px;
+}
+
+#list_all {
+    margin-top: 20px;
+}
+
+#csz > div {
+    padding: 15px 5px 0px 5px;
+}
+
+.job {
+    padding: 4px;
+    padding-bottom: 20px;
+    border: 2px black solid;
+    border-radius: 25px;
+    box-shadow: 0 0 40px 5px gray;
+    margin-bottom: 50px;
+
+}
+
+.jobs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 500px));
+    grid-auto-rows: auto;
+    gap: 20px;
+    margin-left: calc(50% - 48vw);
+    margin-right: calc(50% - 50vw);
+    margin-top: 50px;
+}
+
+.jobs hr{
+    height: 7px;
+    background-color: slategray;
+}
+
+
+
+

@@ -1,0 +1,38 @@
+{% extends 'job_post/base.html' %}
+{% load custom_tags %}
+{% load static %}
+{% block content %}
+    <div class="flex-lg-row">
+        <div id="logo">
+            <img src="{% static 'images/logo-250.png' %}" alt=""/>
+        </div>
+        <div class="search-container" id="search-home" style="height: 100%">
+            <form action="" method="get">
+                {% csrf_token %}
+                <input class="search-home" type="text" placeholder="Web Developer..." size="60" name="main_search">
+                <span>in</span>
+                <input class="search-home" style="text-align: center" size="18" type="search" placeholder="Omaha, NE"
+                       name="location">
+                <input class="btn btn-light" type="submit" value="Search">
+            </form>
+            <div class="search-home" style="text-align: center;">
+                <a class="btn btn-dark" id="list_all"
+                   href="{% url 'upwork:search_results' %}">List All
+                </a>
+                {% if user.is_authenticated %}
+                    <hr>
+{#                    TODO: This is a quick and dirty way to make sure users are being placed in/#}
+{#                     the correct group upon registration. This will be removed and permissions.#}
+{#                     will be assigned instead #}
+                    {% if request.user|has_group:"seekers" %}
+                        <h3>SEEKER</h3>
+                    {% elif request.user|has_group:"recruiters" %}
+                        <h3>RECRUITER</h3>
+                    {% endif %}
+                    <hr>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

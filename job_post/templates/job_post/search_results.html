@@ -1,0 +1,39 @@
+{% extends 'job_post/base.html' %}
+{% load static %}
+{% load custom_tags %}
+{% block content %}
+    <body>
+    <div class="content container" style="height: 100%">
+        <form action="" method="get">
+            {% csrf_token %}
+            <input type="text" placeholder="Web Developer..." name="main_search">
+            <span>in</span>
+            <input type="search" placeholder="Omaha, NE" name="location">
+            <input type="search" placeholder="within..." name="radius">
+            <input type="search" placeholder="Min. Salary" name="min_sal">
+            <input type="search" placeholder="Max Salary" name="max_sal">
+            <input type="search" placeholder="Job Type" name="type">
+            <input class="btn btn-light" type="submit">
+        </form>
+    </div>
+    <div>
+        <div class="row">
+
+            {% for customer in object_list %}
+                <div class="col-sm">
+
+                    <div class="job">
+                        <h3>Job</h3>
+                        <hr>
+                        <p>{{ customer.email }}</p>
+                        <p>{{ customer.id }}</p>
+                        <p>{{ customer.last_login }}</p>
+                    </div>
+                </div>
+
+            {% endfor %}
+        </div>
+
+    </div>
+    </body>
+{% endblock %}
